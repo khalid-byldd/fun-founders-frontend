@@ -518,3 +518,220 @@ th {
     margin-left: 3.2rem;
   }
 }
+
+.podium-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.podium-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid rgba(140, 157, 199, 0.35);
+  background: linear-gradient(155deg, rgba(19, 26, 40, 0.94) 0%, rgba(9, 13, 22, 0.96) 100%);
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.35rem;
+  animation: floatPulse 3.6s ease-in-out infinite;
+}
+
+.podium-card::before {
+  content: '';
+  position: absolute;
+  inset: -60% 20% auto;
+  height: 180%;
+  background: linear-gradient(100deg, transparent 25%, rgba(255, 255, 255, 0.24) 50%, transparent 75%);
+  transform: rotate(14deg);
+  animation: shimmer 4.8s linear infinite;
+}
+
+.podium-card.gold {
+  border-color: rgba(255, 215, 90, 0.75);
+  box-shadow: 0 0 30px rgba(255, 204, 80, 0.28);
+}
+
+.podium-card.silver {
+  border-color: rgba(200, 214, 246, 0.65);
+  box-shadow: 0 0 26px rgba(175, 196, 245, 0.24);
+}
+
+.podium-card.bronze {
+  border-color: rgba(255, 168, 90, 0.64);
+  box-shadow: 0 0 26px rgba(255, 148, 71, 0.22);
+}
+
+.podium-crown {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 14px rgba(255, 232, 124, 0.7));
+}
+
+.top-avatar {
+  width: 72px !important;
+  height: 72px !important;
+}
+
+.podium-rank {
+  margin: 0;
+  font-weight: 700;
+  color: #8ce6ff;
+}
+
+.podium-card h2 {
+  margin: 0;
+  font-size: 1.06rem;
+}
+
+.podium-card strong {
+  font-size: 1.5rem;
+  color: #f7fbff;
+  text-shadow: 0 0 16px rgba(116, 235, 255, 0.3);
+}
+
+.podium-card span {
+  color: #65f2b5;
+  font-weight: 600;
+}
+
+.leaderboard-table {
+  border: 1px solid rgba(125, 147, 189, 0.35);
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(10, 13, 22, 0.92) 0%, rgba(8, 11, 18, 0.98) 100%);
+}
+
+.table-head,
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 90px 1.4fr 0.7fr 0.7fr 0.8fr;
+  align-items: center;
+}
+
+.table-head {
+  padding: 0.8rem 1rem;
+  color: #8fa4c8;
+  font-size: 0.78rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(133, 152, 194, 0.25);
+}
+
+.leaderboard-row {
+  position: relative;
+  padding: 0.78rem 1rem;
+  border-bottom: 1px solid rgba(82, 95, 126, 0.25);
+  transition: background 220ms ease, transform 220ms ease;
+  animation: rowSlide 550ms ease both;
+}
+
+.leaderboard-row:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-row:hover {
+  background: rgba(66, 179, 255, 0.08);
+  transform: scale(1.005);
+}
+
+.leaderboard-row.top-1 {
+  background: linear-gradient(90deg, rgba(255, 210, 90, 0.12), rgba(10, 15, 25, 0));
+}
+
+.leaderboard-row.top-2 {
+  background: linear-gradient(90deg, rgba(212, 227, 255, 0.1), rgba(10, 15, 25, 0));
+}
+
+.leaderboard-row.top-3 {
+  background: linear-gradient(90deg, rgba(255, 162, 92, 0.12), rgba(10, 15, 25, 0));
+}
+
+.row-rank {
+  font-weight: 700;
+  color: #8fe7ff;
+}
+
+.row-team {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.team-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(144, 164, 209, 0.42);
+  background: #111722;
+  box-shadow: 0 0 18px rgba(98, 205, 255, 0.18);
+}
+
+.row-team h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.row-team p {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+}
+
+.row-members,
+.row-trend,
+.row-score {
+  font-weight: 600;
+}
+
+.row-trend {
+  color: #66f3b4;
+}
+
+.row-score {
+  font-size: 1.1rem;
+  color: #f4f8ff;
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-120%) rotate(14deg);
+  }
+  to {
+    transform: translateX(140%) rotate(14deg);
+  }
+}
+
+@keyframes rowSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .podium-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .table-head {
+    display: none;
+  }
+
+  .leaderboard-row {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    padding: 0.9rem;
+  }
+
+  .row-members,
+  .row-trend,
+  .row-score {
+    margin-left: 3.4rem;
+  }
+}
