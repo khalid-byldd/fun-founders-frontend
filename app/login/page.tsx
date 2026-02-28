@@ -22,8 +22,9 @@ export default function LoginPage() {
   return (
     <main className="auth-shell">
       <form className="auth-card" onSubmit={handleLogin}>
+        <p className="sidebar-group">FUN FOUNDERS</p>
         <h1>Admin Login</h1>
-        <p>Sign in to access the Fun Founders admin panel.</p>
+        <p>Sign in to continue to your dashboard.</p>
         <input
           type="email"
           className="input"

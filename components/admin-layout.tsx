@@ -44,7 +44,14 @@ export default function AdminLayout({ title, children }: AdminLayoutProps) {
   return (
     <div className="admin-layout">
       <aside className="sidebar">
-        <div className="brand">Fun Founders</div>
+        <div className="brand-wrap">
+          <div className="brand-mark">FF</div>
+          <div>
+            <div className="brand">fun-founders</div>
+            <p className="sidebar-note">Admin Console</p>
+          </div>
+        </div>
+        <p className="sidebar-group">Project</p>
         <nav className="nav-links">
           {navItems.map((item) => (
             <Link
@@ -63,6 +70,11 @@ export default function AdminLayout({ title, children }: AdminLayoutProps) {
       <section className="main-panel">
         <div className="topbar">
           <h1>{title}</h1>
+          <div className="topbar-actions">
+            <button className="ghost-btn">Connect</button>
+            <button className="ghost-btn">Import data</button>
+            <button className="ghost-btn">Share</button>
+          </div>
         </div>
         {children}
       </section>
