@@ -1346,3 +1346,48 @@ body {
   border-color: #4f3034;
   background: #130d0f;
 }
+
+/* Public topbar season selector + react-icons sidebar */
+.public-link-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.public-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem 0;
+}
+
+.public-topbar h1 {
+  margin: 0;
+}
+
+.season-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.season-picker select {
+  border: 1px solid rgba(255, 113, 113, 0.35);
+  background: #140d0f;
+  color: #ffe7e7;
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+}
+
+.public-main .rankboard-page {
+  padding-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .public-topbar {
+    padding-top: 0.85rem;
+    flex-wrap: wrap;
+  }
+}

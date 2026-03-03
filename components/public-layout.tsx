@@ -2,21 +2,24 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import type { ReactNode } from 'react';
+import type { IconType } from 'react-icons';
+import { FaCalendarAlt, FaTrophy, FaUsers } from 'react-icons/fa';
+import { useState, type ReactNode } from 'react';
 
 type PublicLayoutProps = {
   title?: string;
   children: ReactNode;
 };
 
-const links = [
-  { href: '/', label: 'Leaderboard', icon: '🏆' },
-  { href: '/teams', label: 'Teams', icon: '👥' },
-  { href: '/events', label: 'Events', icon: '📅' }
+const links: Array<{ href: string; label: string; icon: IconType }> = [
+  { href: '/', label: 'Leaderboard', icon: FaTrophy },
+  { href: '/teams', label: 'Teams', icon: FaUsers },
+  { href: '/events', label: 'Events', icon: FaCalendarAlt }
 ];
 
 export default function PublicLayout({ title, children }: PublicLayoutProps) {
   const pathname = usePathname();
+  const [season, setSeason] = useState('season-06');
 
   return (
     <div className="public-layout">
@@ -25,21 +28,34 @@ export default function PublicLayout({ title, children }: PublicLayoutProps) {
           FF
         </div>
         <nav className="public-nav">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              aria-label={link.label}
-              title={link.label}
-              className={`public-link ${pathname === link.href ? 'active' : ''}`}
-            >
-              <span>{link.icon}</span>
-            </Link>
-          ))}
+          {links.map((link) => {
+            const Icon = link.icon;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-label={link.label}
+                title={link.label}
+                className={`public-link ${pathname === link.href ? 'active' : ''}`}
+              >
+                <Icon className="public-link-icon" />
+              </Link>
+            );
+          })}
         </nav>
       </aside>
       <main className="public-main">
-        {title ? <h1>{title}</h1> : null}
+        <div className="public-topbar">
+          {title ? <h1>{title}</h1> : <div />}
+          <label className="season-picker">
+            <span>Season</span>
+            <select value={season} onChange={(event) => setSeason(event.target.value)}>
+              <option value="season-06">Season 06</option>
+              <option value="season-05">Season 05</option>
+              <option value="season-04">Season 04</option>
+            </select>
+          </label>
+        </div>
         {children}
       </main>
     </div>
