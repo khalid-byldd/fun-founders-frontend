@@ -1391,3 +1391,71 @@ body {
     flex-wrap: wrap;
   }
 }
+
+/* Public teams cards */
+.public-teams-grid {
+  padding: 1rem 1.2rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.team-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 100, 100, 0.28);
+  background: linear-gradient(170deg, #1a0d10 0%, #11080a 100%);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 120, 120, 0.45);
+}
+
+.team-card-image-wrap {
+  aspect-ratio: 16 / 10;
+  background: #060606;
+  border-bottom: 1px solid rgba(255, 100, 100, 0.2);
+}
+
+.team-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card-content {
+  padding: 0.9rem;
+}
+
+.team-card-content h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.05rem;
+}
+
+.team-card-content p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.45rem 0;
+  color: #d9b7bc;
+}
+
+.team-card-content p strong {
+  color: #ffe9ec;
+}
+
+@media (max-width: 1120px) {
+  .public-teams-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .public-teams-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem 0.9rem 1.6rem;
+  }
+}
