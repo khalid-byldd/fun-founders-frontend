@@ -1261,3 +1261,88 @@ th {
     gap: 0.45rem;
   }
 }
+
+/* Global red + dark black theme overrides */
+:root {
+  --bg: #060606;
+  --panel: #0e0e0f;
+  --panel-soft: #151112;
+  --border: #3a2023;
+  --text: #f4ecec;
+  --muted: #b79ca0;
+  --accent: #ef4444;
+  --accent-soft: rgba(239, 68, 68, 0.18);
+}
+
+body {
+  background: radial-gradient(circle at top, #1a0f12 0%, #080607 48%, #040404 100%);
+}
+
+.button {
+  background: linear-gradient(180deg, #f35656 0%, #c82f2f 100%);
+  color: #fff4f4;
+}
+
+.sidebar,
+.public-sidebar {
+  background: linear-gradient(180deg, #130c0d 0%, #090708 100%);
+  border-color: rgba(255, 96, 96, 0.2);
+}
+
+.nav-link.active,
+.nav-link:hover,
+.public-link.active,
+.public-link:hover {
+  border-color: rgba(255, 103, 103, 0.4);
+  background: rgba(255, 82, 82, 0.14);
+  color: #fff0f0;
+}
+
+.brand-mark,
+.public-brand {
+  background: rgba(255, 80, 80, 0.16);
+  border-color: rgba(255, 103, 103, 0.35);
+  color: #ffd7d7;
+}
+
+.page-card,
+.rankboard-podium-body,
+.rankboard-row {
+  background: linear-gradient(160deg, #161012 0%, #0d090a 100%);
+  border-color: rgba(255, 100, 100, 0.16);
+}
+
+.rankboard-page {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 68, 68, 0.2), transparent 34%),
+    radial-gradient(circle at 18% 18%, rgba(255, 0, 0, 0.08), transparent 30%),
+    #040404;
+}
+
+.rankboard-kicker,
+.row-rank,
+.rankboard-row-rank {
+  color: #d6a0a6;
+}
+
+.rankboard-row-score,
+.row-score {
+  color: #ff9ca6;
+}
+
+.rankboard-row:hover {
+  border-color: rgba(255, 108, 108, 0.34);
+  background: linear-gradient(180deg, #211317 0%, #140c0f 100%);
+}
+
+.ghost-btn,
+.signout {
+  border-color: #5a2b31;
+  background: #1a1012;
+  color: #ffd7d7;
+}
+
+.input {
+  border-color: #4f3034;
+  background: #130d0f;
+}
