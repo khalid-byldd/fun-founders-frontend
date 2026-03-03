@@ -1198,3 +1198,66 @@ th {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 }
+
+/* Thin icon-only public sidebar */
+.public-layout {
+  grid-template-columns: 72px 1fr;
+}
+
+.public-sidebar {
+  padding: 0.9rem 0.65rem;
+}
+
+.public-brand {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 0.85rem;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 0.76rem;
+  background: rgba(255, 128, 60, 0.14);
+  border: 1px solid rgba(255, 140, 78, 0.32);
+}
+
+.public-link {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  font-size: 1.05rem;
+}
+
+.public-main {
+  padding: 0;
+}
+
+
+.public-main .rankboard-page {
+  min-height: 100vh;
+  padding: 2rem 1.2rem 3rem;
+}
+
+@media (max-width: 900px) {
+  .public-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .public-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .public-brand {
+    margin: 0;
+  }
+
+  .public-nav {
+    display: flex;
+    gap: 0.45rem;
+  }
+}
