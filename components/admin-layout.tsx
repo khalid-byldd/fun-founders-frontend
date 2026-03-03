@@ -10,10 +10,10 @@ type AdminLayoutProps = {
 };
 
 const navItems: Array<{ href: string; label: string }> = [
-  { href: '/dashboard', label: 'Dashboard' },
-  { href: '/teams', label: 'Teams' },
-  { href: '/events', label: 'Events' },
-  { href: '/settings', label: 'Settings' }
+  { href: '/admin/dashboard', label: 'Dashboard' },
+  { href: '/admin/teams', label: 'Teams' },
+  { href: '/admin/events', label: 'Events' },
+  { href: '/admin/settings', label: 'Settings' }
 ];
 
 export default function AdminLayout({ title, children }: AdminLayoutProps) {
@@ -25,7 +25,7 @@ export default function AdminLayout({ title, children }: AdminLayoutProps) {
     const isAuthed = localStorage.getItem('ff_admin_auth') === 'true';
 
     if (!isAuthed) {
-      router.replace('/login');
+      router.replace('/admin/login');
       return;
     }
 
@@ -34,7 +34,8 @@ export default function AdminLayout({ title, children }: AdminLayoutProps) {
 
   const signOut = () => {
     localStorage.removeItem('ff_admin_auth');
-    router.push('/login');
+    document.cookie = 'ff_admin_auth=; path=/; max-age=0; samesite=lax';
+    router.push('/admin/login');
   };
 
   if (!ready) {
@@ -51,7 +52,7 @@ export default function AdminLayout({ title, children }: AdminLayoutProps) {
             <p className="sidebar-note">Admin Console</p>
           </div>
         </div>
-        <p className="sidebar-group">Project</p>
+        <p className="sidebar-group">Admin</p>
         <nav className="nav-links">
           {navItems.map((item) => (
             <Link
@@ -70,11 +71,6 @@ export default function AdminLayout({ title, children }: AdminLayoutProps) {
       <section className="main-panel">
         <div className="topbar">
           <h1>{title}</h1>
-          <div className="topbar-actions">
-            <button className="ghost-btn">Connect</button>
-            <button className="ghost-btn">Import data</button>
-            <button className="ghost-btn">Share</button>
-          </div>
         </div>
         {children}
       </section>

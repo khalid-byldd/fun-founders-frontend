@@ -1141,3 +1141,60 @@ th {
     transition: none !important;
   }
 }
+
+/* Public pages with vertical sidebar */
+.public-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+}
+
+.public-sidebar {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, #090d17 0%, #060911 100%);
+  padding: 1.2rem;
+}
+
+.public-brand {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.public-nav {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.public-link {
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  color: #a8b2cb;
+  border: 1px solid transparent;
+}
+
+.public-link.active,
+.public-link:hover {
+  color: #eff3ff;
+  border-color: rgba(255, 130, 68, 0.32);
+  background: rgba(255, 126, 66, 0.1);
+}
+
+.public-main {
+  padding: 1.4rem;
+}
+
+.public-main > h1 {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .public-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .public-sidebar {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}

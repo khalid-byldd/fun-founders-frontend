@@ -1,17 +1,24 @@
-import AdminLayout from '@/components/admin-layout';
+import PublicLayout from '@/components/public-layout';
 
-export default function EventsPage() {
+const events = [
+  { date: 'Mar 18', title: 'Founder Meetup', location: 'Downtown Hub' },
+  { date: 'Mar 25', title: 'Investor Demo Day', location: 'Main Auditorium' },
+  { date: 'Apr 02', title: 'Product Sprint Review', location: 'Virtual' }
+];
+
+export default function EventsPublicPage() {
   return (
-    <AdminLayout title="Events">
+    <PublicLayout title="Events">
       <div className="page-card">
-        <h2>Events Timeline</h2>
-        <p className="muted">Plan demo days, sync sessions, and founder community meetups.</p>
+        <p className="muted">Public calendar for upcoming sessions.</p>
         <ul className="activity-list">
-          <li>Mar 18 · Founder Meetup · Downtown Hub</li>
-          <li>Mar 25 · Investor Demo Day · Main Auditorium</li>
-          <li>Apr 02 · Product Sprint Review · Virtual</li>
+          {events.map((event) => (
+            <li key={event.title}>
+              <strong>{event.date}</strong> · {event.title} · {event.location}
+            </li>
+          ))}
         </ul>
       </div>
-    </AdminLayout>
+    </PublicLayout>
   );
 }
