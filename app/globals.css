@@ -960,3 +960,105 @@ th {
     margin-left: 4.4rem;
   }
 }
+
+/* Esports-inspired refinement */
+.rankboard-page {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 72, 0, 0.16), transparent 34%),
+    radial-gradient(circle at 18% 18%, rgba(255, 120, 0, 0.08), transparent 30%),
+    #050507;
+}
+
+.rankboard-shell h1 {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.rankboard-podium {
+  align-items: end;
+}
+
+.rankboard-podium-card {
+  gap: 0.7rem;
+}
+
+.rankboard-podium-card.place-1 {
+  transform: translateY(-28px);
+}
+
+.rankboard-podium-card.place-2,
+.rankboard-podium-card.place-3 {
+  transform: translateY(8px);
+}
+
+.rankboard-podium-card:nth-child(2) {
+  transform: translateY(-28px);
+}
+
+.rankboard-logo-wrap {
+  width: 184px;
+  height: 184px;
+  border-radius: 16px;
+  padding: 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, #f5f6f8 0%, #dfe4ec 100%);
+}
+
+.rankboard-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  filter: saturate(0.75) contrast(1.1);
+}
+
+.rankboard-podium-body {
+  background: linear-gradient(180deg, #1c2436 0%, #141b2a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rankboard-podium-body h2 {
+  background: linear-gradient(180deg, #b8a2ff 0%, #f46eca 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.rankboard-row {
+  background: linear-gradient(180deg, #0f1830 0%, #0c1428 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rankboard-row-logo-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f5f7fb 0%, #d9deea 100%);
+  padding: 0.25rem;
+}
+
+.rankboard-row-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
+  object-fit: cover;
+  background: #fff;
+  padding: 0.2rem;
+}
+
+.rankboard-row-score {
+  color: #9ab0ff;
+}
+
+@media (max-width: 900px) {
+  .rankboard-podium-card.place-1,
+  .rankboard-podium-card.place-2,
+  .rankboard-podium-card.place-3,
+  .rankboard-podium-card:nth-child(2) {
+    transform: translateY(0);
+  }
+
+  .rankboard-logo-wrap {
+    width: 142px;
+    height: 142px;
+  }
+}
