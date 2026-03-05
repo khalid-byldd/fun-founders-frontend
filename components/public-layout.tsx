@@ -46,7 +46,7 @@ export default function PublicLayout({ title, children }: PublicLayoutProps) {
       </aside>
       <main className="public-main">
         <div className="public-topbar">
-          {title ? <h1>{title}</h1> : <div />}
+          {title ? <h1>{title}</h1> : <div className="public-topbar-spacer" />}
           <label className="season-picker">
             <span>Season</span>
             <select value={season} onChange={(event) => setSeason(event.target.value)}>

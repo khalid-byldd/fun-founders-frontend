@@ -1459,3 +1459,40 @@ body {
     padding: 1rem 0.9rem 1.6rem;
   }
 }
+
+/* Blend season dropdown into leaderboard header */
+.public-topbar {
+  margin: 0 1.2rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 104, 104, 0.22);
+  background:
+    linear-gradient(180deg, rgba(19, 7, 9, 0.96) 0%, rgba(15, 6, 8, 0.95) 100%),
+    radial-gradient(circle at 35% -40%, rgba(255, 56, 56, 0.22), transparent 60%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.public-topbar-spacer {
+  min-height: 1px;
+}
+
+.season-picker {
+  color: #d2b6ba;
+}
+
+.season-picker select {
+  border-color: rgba(255, 108, 108, 0.45);
+  background: #12090c;
+  color: #ffeef0;
+}
+
+.public-main .rankboard-page {
+  padding-top: 0.55rem;
+}
+
+@media (max-width: 900px) {
+  .public-topbar {
+    margin: 0.85rem 0.9rem 0;
+    padding: 0.7rem 0.8rem;
+  }
+}
