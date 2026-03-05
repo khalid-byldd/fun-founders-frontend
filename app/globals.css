@@ -1718,3 +1718,92 @@ body {
     max-height: 340px;
   }
 }
+
+/* Livelier Teams/Events styling */
+.team-list-card,
+.event-list-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.team-list-card::after,
+.event-list-card::after {
+  content: '';
+  position: absolute;
+  inset: -120% 40% auto;
+  height: 220%;
+  background: linear-gradient(100deg, transparent 35%, rgba(255, 255, 255, 0.12) 50%, transparent 65%);
+  transform: rotate(14deg);
+  animation: panelShimmer 5.5s linear infinite;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.team-list-card:hover,
+.event-list-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(255, 126, 126, 0.5);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+}
+
+.team-list-card:hover::after,
+.event-list-card:hover::after,
+.team-list-card.active::after,
+.event-list-card.active::after {
+  opacity: 1;
+}
+
+.team-list-thumb,
+.event-list-thumb,
+.team-members-logo,
+.event-header-logo {
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.team-list-card:hover .team-list-thumb,
+.event-list-card:hover .event-list-thumb {
+  transform: scale(1.05);
+  filter: saturate(1.08);
+}
+
+.team-members-panel,
+.event-scores-panel {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
+}
+
+.team-members-panel::before,
+.event-scores-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 12% -10%, rgba(255, 90, 90, 0.2), transparent 42%);
+}
+
+.member-row,
+.event-score-row {
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.member-row:hover,
+.event-score-row:hover {
+  transform: translateX(4px);
+  border-color: rgba(255, 128, 128, 0.42);
+  background: rgba(41, 18, 22, 0.85);
+}
+
+.member-index {
+  text-shadow: 0 0 12px rgba(255, 92, 92, 0.35);
+}
+
+@keyframes panelShimmer {
+  0% {
+    transform: translateX(-120%) rotate(14deg);
+  }
+  100% {
+    transform: translateX(140%) rotate(14deg);
+  }
+}
