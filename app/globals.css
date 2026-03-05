@@ -1486,3 +1486,119 @@ body {
 .rankboard-podium-card.place-3:hover {
   transform: translateY(0) scale(1.015);
 }
+
+/* Teams split view */
+.teams-split-layout {
+  padding: 1rem 1.2rem 2rem;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1rem;
+}
+
+.teams-scroll-column {
+  max-height: calc(100vh - 210px);
+  overflow: auto;
+  display: grid;
+  gap: 0.65rem;
+  padding-right: 0.3rem;
+}
+
+.team-list-card {
+  width: 100%;
+  border: 1px solid rgba(255, 100, 100, 0.24);
+  border-radius: 12px;
+  background: linear-gradient(170deg, #190d10 0%, #100709 100%);
+  color: #f8eaea;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.team-list-card.active {
+  border-color: rgba(255, 119, 119, 0.6);
+  background: linear-gradient(170deg, #2a1015 0%, #17090c 100%);
+}
+
+.team-list-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.team-list-card h3 {
+  margin: 0 0 0.2rem;
+  font-size: 0.98rem;
+}
+
+.team-list-card p {
+  margin: 0;
+  color: #d0a8ad;
+  font-size: 0.86rem;
+}
+
+.team-members-panel {
+  border: 1px solid rgba(255, 100, 100, 0.25);
+  border-radius: 16px;
+  background: linear-gradient(170deg, #180d10 0%, #11090b 100%);
+  padding: 1rem;
+}
+
+.team-members-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(255, 100, 100, 0.22);
+  padding-bottom: 0.9rem;
+}
+
+.team-members-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+}
+
+.team-members-header h2 {
+  margin: 0 0 0.25rem;
+}
+
+.team-members-header p {
+  margin: 0;
+  color: #d8b2b7;
+}
+
+.members-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.member-row {
+  border: 1px solid rgba(255, 100, 100, 0.2);
+  border-radius: 10px;
+  background: rgba(27, 13, 15, 0.8);
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.member-index {
+  color: #ff9aa5;
+  font-weight: 700;
+  min-width: 34px;
+}
+
+@media (max-width: 980px) {
+  .teams-split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .teams-scroll-column {
+    max-height: 320px;
+  }
+}
