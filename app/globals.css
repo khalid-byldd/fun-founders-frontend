@@ -1459,3 +1459,30 @@ body {
     padding: 1rem 0.9rem 1.6rem;
   }
 }
+
+/* Podium rank tone + hierarchy tweak */
+.rankboard-podium-body h2 {
+  background: linear-gradient(180deg, #ffb3b3 0%, #ff5a5a 45%, #d92c2c 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.rankboard-podium-card.place-1,
+.rankboard-podium-card:nth-child(2) {
+  transform: translateY(-20px);
+}
+
+.rankboard-podium-card.place-2,
+.rankboard-podium-card.place-3 {
+  transform: translateY(4px);
+}
+
+.rankboard-podium-card.place-1:hover,
+.rankboard-podium-card:nth-child(2):hover {
+  transform: translateY(-26px) scale(1.02);
+}
+
+.rankboard-podium-card.place-2:hover,
+.rankboard-podium-card.place-3:hover {
+  transform: translateY(0) scale(1.015);
+}
